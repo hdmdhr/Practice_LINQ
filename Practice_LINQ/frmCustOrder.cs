@@ -14,6 +14,9 @@ namespace Practice_LINQ
 {
     public partial class frmCustOrder : Form
     {
+        List<Order> orders = OrderDB.GetOrders();
+        List<Customer> customers = CustomerDB.GetCustomers();
+
         public frmCustOrder()
         {
             InitializeComponent();
@@ -21,8 +24,6 @@ namespace Practice_LINQ
 
         private void frmCustOrder_Load(object sender, EventArgs e)
         {
-            var orders = OrderDB.GetOrders();
-            var customers = CustomerDB.GetCustomers();
             // bind data grid view
             
             // bind detailed customer textboxes
@@ -34,12 +35,39 @@ namespace Practice_LINQ
                            join o in orders
                            on c.CustomerID equals o.CustomerID
                            orderby c.ContactName, o.OrderDate descending
-                           select new { };
+                           select new
+                           {
+                               c.ContactName,
+                               o.OrderID,
+                               o.EmployeeID,
+                               o.OrderDate,
+                               o.ShippedDate
+                           };
 
-            //foreach (var c in customers)
-            //{
-            //    Debug.WriteLine(c.CustomerID.ToString());
-            //}
+        }
+
+        private void customerBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+            Debug.WriteLine(customerIDComboBox.Text);
+            var linq = from o in orders
+                       where o.CustomerID == customerIDComboBox.Text
+                       select new
+                       {
+                           o.OrderID,
+                           o.CustomerID,
+                           o.EmployeeID,
+                           o.OrderDate,
+                           o.RequiredDate,
+                           o.ShippedDate,
+                           o.ShipVia,
+                           o.Freight,
+                           o.ShipName,
+                           o.ShipAddress,
+                           o.ShipCity,
+                           o.ShipRegion,
+                           o.ShipPostalCode,
+                           o.ShipCountry
+                       };
         }
     }
 }

@@ -19,7 +19,7 @@ namespace NorthwindData
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
-
+        public List<Order> Orders { get; set; }
         // constructor
     }
 }
