@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice_LINQ", "Practice_LINQ\Practice_LINQ.csproj", "{264EF07D-3BD2-435C-82BF-97C0501AFE05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindData", "NorthwindData\NorthwindData.csproj", "{CD09C191-504C-4BC0-947E-503D606DEE84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{264EF07D-3BD2-435C-82BF-97C0501AFE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264EF07D-3BD2-435C-82BF-97C0501AFE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264EF07D-3BD2-435C-82BF-97C0501AFE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264EF07D-3BD2-435C-82BF-97C0501AFE05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD09C191-504C-4BC0-947E-503D606DEE84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD09C191-504C-4BC0-947E-503D606DEE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD09C191-504C-4BC0-947E-503D606DEE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD09C191-504C-4BC0-947E-503D606DEE84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19268464-5B97-4F29-886D-44DF94E0D46A}
+	EndGlobalSection
+EndGlobal
