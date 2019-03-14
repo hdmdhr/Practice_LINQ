@@ -41,6 +41,9 @@
             System.Windows.Forms.Label postalCodeLabel;
             System.Windows.Forms.Label regionLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustOrder));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -69,12 +72,10 @@
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,7 +104,7 @@
             // addressLabel
             // 
             addressLabel.AutoSize = true;
-            addressLabel.Location = new System.Drawing.Point(14, 43);
+            addressLabel.Location = new System.Drawing.Point(60, 75);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new System.Drawing.Size(74, 21);
             addressLabel.TabIndex = 1;
@@ -112,7 +113,7 @@
             // cityLabel
             // 
             cityLabel.AutoSize = true;
-            cityLabel.Location = new System.Drawing.Point(14, 77);
+            cityLabel.Location = new System.Drawing.Point(92, 114);
             cityLabel.Name = "cityLabel";
             cityLabel.Size = new System.Drawing.Size(42, 21);
             cityLabel.TabIndex = 3;
@@ -121,7 +122,7 @@
             // companyNameLabel
             // 
             companyNameLabel.AutoSize = true;
-            companyNameLabel.Location = new System.Drawing.Point(14, 111);
+            companyNameLabel.Location = new System.Drawing.Point(0, 153);
             companyNameLabel.Name = "companyNameLabel";
             companyNameLabel.Size = new System.Drawing.Size(134, 21);
             companyNameLabel.TabIndex = 5;
@@ -130,7 +131,7 @@
             // contactNameLabel
             // 
             contactNameLabel.AutoSize = true;
-            contactNameLabel.Location = new System.Drawing.Point(14, 145);
+            contactNameLabel.Location = new System.Drawing.Point(14, 192);
             contactNameLabel.Name = "contactNameLabel";
             contactNameLabel.Size = new System.Drawing.Size(120, 21);
             contactNameLabel.TabIndex = 7;
@@ -139,7 +140,7 @@
             // contactTitleLabel
             // 
             contactTitleLabel.AutoSize = true;
-            contactTitleLabel.Location = new System.Drawing.Point(14, 179);
+            contactTitleLabel.Location = new System.Drawing.Point(27, 231);
             contactTitleLabel.Name = "contactTitleLabel";
             contactTitleLabel.Size = new System.Drawing.Size(107, 21);
             contactTitleLabel.TabIndex = 9;
@@ -148,7 +149,7 @@
             // countryLabel
             // 
             countryLabel.AutoSize = true;
-            countryLabel.Location = new System.Drawing.Point(14, 213);
+            countryLabel.Location = new System.Drawing.Point(62, 270);
             countryLabel.Name = "countryLabel";
             countryLabel.Size = new System.Drawing.Size(72, 21);
             countryLabel.TabIndex = 11;
@@ -157,16 +158,17 @@
             // customerIDLabel
             // 
             customerIDLabel.AutoSize = true;
-            customerIDLabel.Location = new System.Drawing.Point(14, 247);
+            customerIDLabel.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            customerIDLabel.Location = new System.Drawing.Point(16, 31);
             customerIDLabel.Name = "customerIDLabel";
-            customerIDLabel.Size = new System.Drawing.Size(106, 21);
+            customerIDLabel.Size = new System.Drawing.Size(118, 21);
             customerIDLabel.TabIndex = 13;
             customerIDLabel.Text = "Customer ID:";
             // 
             // faxLabel
             // 
             faxLabel.AutoSize = true;
-            faxLabel.Location = new System.Drawing.Point(14, 282);
+            faxLabel.Location = new System.Drawing.Point(96, 309);
             faxLabel.Name = "faxLabel";
             faxLabel.Size = new System.Drawing.Size(38, 21);
             faxLabel.TabIndex = 15;
@@ -175,7 +177,7 @@
             // phoneLabel
             // 
             phoneLabel.AutoSize = true;
-            phoneLabel.Location = new System.Drawing.Point(14, 316);
+            phoneLabel.Location = new System.Drawing.Point(74, 348);
             phoneLabel.Name = "phoneLabel";
             phoneLabel.Size = new System.Drawing.Size(60, 21);
             phoneLabel.TabIndex = 17;
@@ -184,7 +186,7 @@
             // postalCodeLabel
             // 
             postalCodeLabel.AutoSize = true;
-            postalCodeLabel.Location = new System.Drawing.Point(14, 350);
+            postalCodeLabel.Location = new System.Drawing.Point(31, 387);
             postalCodeLabel.Name = "postalCodeLabel";
             postalCodeLabel.Size = new System.Drawing.Size(103, 21);
             postalCodeLabel.TabIndex = 19;
@@ -193,7 +195,7 @@
             // regionLabel
             // 
             regionLabel.AutoSize = true;
-            regionLabel.Location = new System.Drawing.Point(14, 384);
+            regionLabel.Location = new System.Drawing.Point(68, 426);
             regionLabel.Name = "regionLabel";
             regionLabel.Size = new System.Drawing.Size(66, 21);
             regionLabel.TabIndex = 21;
@@ -230,7 +232,7 @@
             this.customerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.customerBindingNavigator.Name = "customerBindingNavigator";
             this.customerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.customerBindingNavigator.Size = new System.Drawing.Size(953, 25);
+            this.customerBindingNavigator.Size = new System.Drawing.Size(1126, 25);
             this.customerBindingNavigator.TabIndex = 0;
             this.customerBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -331,59 +333,65 @@
             // addressTextBox
             // 
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Address", true));
-            this.addressTextBox.Location = new System.Drawing.Point(154, 40);
+            this.addressTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressTextBox.Location = new System.Drawing.Point(154, 72);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(121, 28);
+            this.addressTextBox.Size = new System.Drawing.Size(121, 25);
             this.addressTextBox.TabIndex = 2;
             // 
             // cityTextBox
             // 
             this.cityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "City", true));
-            this.cityTextBox.Location = new System.Drawing.Point(154, 74);
+            this.cityTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cityTextBox.Location = new System.Drawing.Point(154, 111);
             this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(121, 28);
+            this.cityTextBox.Size = new System.Drawing.Size(121, 25);
             this.cityTextBox.TabIndex = 4;
             // 
             // companyNameTextBox
             // 
             this.companyNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "CompanyName", true));
-            this.companyNameTextBox.Location = new System.Drawing.Point(154, 108);
+            this.companyNameTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.companyNameTextBox.Location = new System.Drawing.Point(154, 150);
             this.companyNameTextBox.Name = "companyNameTextBox";
-            this.companyNameTextBox.Size = new System.Drawing.Size(121, 28);
+            this.companyNameTextBox.Size = new System.Drawing.Size(121, 25);
             this.companyNameTextBox.TabIndex = 6;
             // 
             // contactNameTextBox
             // 
             this.contactNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "ContactName", true));
-            this.contactNameTextBox.Location = new System.Drawing.Point(154, 142);
+            this.contactNameTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactNameTextBox.Location = new System.Drawing.Point(154, 189);
             this.contactNameTextBox.Name = "contactNameTextBox";
-            this.contactNameTextBox.Size = new System.Drawing.Size(121, 28);
+            this.contactNameTextBox.Size = new System.Drawing.Size(121, 25);
             this.contactNameTextBox.TabIndex = 8;
             // 
             // contactTitleTextBox
             // 
             this.contactTitleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "ContactTitle", true));
-            this.contactTitleTextBox.Location = new System.Drawing.Point(154, 176);
+            this.contactTitleTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactTitleTextBox.Location = new System.Drawing.Point(154, 228);
             this.contactTitleTextBox.Name = "contactTitleTextBox";
-            this.contactTitleTextBox.Size = new System.Drawing.Size(121, 28);
+            this.contactTitleTextBox.Size = new System.Drawing.Size(121, 25);
             this.contactTitleTextBox.TabIndex = 10;
             // 
             // countryTextBox
             // 
             this.countryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Country", true));
-            this.countryTextBox.Location = new System.Drawing.Point(154, 210);
+            this.countryTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countryTextBox.Location = new System.Drawing.Point(154, 267);
             this.countryTextBox.Name = "countryTextBox";
-            this.countryTextBox.Size = new System.Drawing.Size(121, 28);
+            this.countryTextBox.Size = new System.Drawing.Size(121, 25);
             this.countryTextBox.TabIndex = 12;
             // 
             // customerIDComboBox
             // 
-            this.customerIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.customerBindingSource, "CustomerID", true));
             this.customerIDComboBox.DataSource = this.customerBindingSource;
             this.customerIDComboBox.DisplayMember = "CustomerID";
             this.customerIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.customerIDComboBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerIDComboBox.FormattingEnabled = true;
-            this.customerIDComboBox.Location = new System.Drawing.Point(154, 244);
+            this.customerIDComboBox.Location = new System.Drawing.Point(154, 28);
             this.customerIDComboBox.Name = "customerIDComboBox";
             this.customerIDComboBox.Size = new System.Drawing.Size(121, 29);
             this.customerIDComboBox.TabIndex = 14;
@@ -392,33 +400,37 @@
             // faxTextBox
             // 
             this.faxTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Fax", true));
-            this.faxTextBox.Location = new System.Drawing.Point(154, 279);
+            this.faxTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.faxTextBox.Location = new System.Drawing.Point(154, 306);
             this.faxTextBox.Name = "faxTextBox";
-            this.faxTextBox.Size = new System.Drawing.Size(121, 28);
+            this.faxTextBox.Size = new System.Drawing.Size(121, 25);
             this.faxTextBox.TabIndex = 16;
             // 
             // phoneTextBox
             // 
             this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Phone", true));
-            this.phoneTextBox.Location = new System.Drawing.Point(154, 313);
+            this.phoneTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneTextBox.Location = new System.Drawing.Point(154, 345);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(121, 28);
+            this.phoneTextBox.Size = new System.Drawing.Size(121, 25);
             this.phoneTextBox.TabIndex = 18;
             // 
             // postalCodeTextBox
             // 
             this.postalCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "PostalCode", true));
-            this.postalCodeTextBox.Location = new System.Drawing.Point(154, 347);
+            this.postalCodeTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postalCodeTextBox.Location = new System.Drawing.Point(154, 384);
             this.postalCodeTextBox.Name = "postalCodeTextBox";
-            this.postalCodeTextBox.Size = new System.Drawing.Size(121, 28);
+            this.postalCodeTextBox.Size = new System.Drawing.Size(121, 25);
             this.postalCodeTextBox.TabIndex = 20;
             // 
             // regionTextBox
             // 
             this.regionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Region", true));
-            this.regionTextBox.Location = new System.Drawing.Point(154, 381);
+            this.regionTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regionTextBox.Location = new System.Drawing.Point(154, 423);
             this.regionTextBox.Name = "regionTextBox";
-            this.regionTextBox.Size = new System.Drawing.Size(121, 28);
+            this.regionTextBox.Size = new System.Drawing.Size(121, 25);
             this.regionTextBox.TabIndex = 22;
             // 
             // ordersBindingSource
@@ -428,16 +440,17 @@
             // 
             // ordersDataGridView
             // 
+            this.ordersDataGridView.AllowUserToAddRows = false;
+            this.ordersDataGridView.AllowUserToDeleteRows = false;
             this.ordersDataGridView.AutoGenerateColumns = false;
+            this.ordersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.ordersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
@@ -448,7 +461,8 @@
             this.ordersDataGridView.DataSource = this.ordersBindingSource;
             this.ordersDataGridView.Location = new System.Drawing.Point(294, 40);
             this.ordersDataGridView.Name = "ordersDataGridView";
-            this.ordersDataGridView.Size = new System.Drawing.Size(647, 419);
+            this.ordersDataGridView.ReadOnly = true;
+            this.ordersDataGridView.Size = new System.Drawing.Size(820, 419);
             this.ordersDataGridView.TabIndex = 23;
             // 
             // dataGridViewTextBoxColumn1
@@ -456,90 +470,111 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "OrderID";
             this.dataGridViewTextBoxColumn1.HeaderText = "OrderID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CustomerID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CustomerID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 95;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "EmployeeID";
             this.dataGridViewTextBoxColumn3.HeaderText = "EmployeeID";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 124;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "OrderDate";
             this.dataGridViewTextBoxColumn4.HeaderText = "OrderDate";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 114;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "RequiredDate";
+            dataGridViewCellStyle1.Format = "M";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn5.HeaderText = "RequiredDate";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 137;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "ShippedDate";
+            dataGridViewCellStyle2.Format = "M";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn6.HeaderText = "ShippedDate";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "ShipVia";
-            this.dataGridViewTextBoxColumn7.HeaderText = "ShipVia";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 131;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Freight";
+            dataGridViewCellStyle3.Format = "N1";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn8.HeaderText = "Freight";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 86;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "ShipName";
             this.dataGridViewTextBoxColumn9.HeaderText = "ShipName";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 111;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "ShipAddress";
             this.dataGridViewTextBoxColumn10.HeaderText = "ShipAddress";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 127;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "ShipCity";
             this.dataGridViewTextBoxColumn11.HeaderText = "ShipCity";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 95;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "ShipRegion";
             this.dataGridViewTextBoxColumn12.HeaderText = "ShipRegion";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 119;
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "ShipPostalCode";
             this.dataGridViewTextBoxColumn13.HeaderText = "ShipPostalCode";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 151;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "ShipCountry";
             this.dataGridViewTextBoxColumn14.HeaderText = "ShipCountry";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 125;
             // 
             // frmCustOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 471);
+            this.ClientSize = new System.Drawing.Size(1126, 471);
             this.Controls.Add(this.ordersDataGridView);
             this.Controls.Add(addressLabel);
             this.Controls.Add(this.addressTextBox);
@@ -610,12 +645,10 @@
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private System.Windows.Forms.DataGridView ordersDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
