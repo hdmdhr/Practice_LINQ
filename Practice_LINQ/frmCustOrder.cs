@@ -31,43 +31,52 @@ namespace Practice_LINQ
 
 
             // joining tables
-            var invoices = from c in customers
-                           join o in orders
-                           on c.CustomerID equals o.CustomerID
-                           orderby c.ContactName, o.OrderDate descending
-                           select new
-                           {
-                               c.ContactName,
-                               o.OrderID,
-                               o.EmployeeID,
-                               o.OrderDate,
-                               o.ShippedDate
-                           };
+            //var invoices = from c in customers
+            //               join o in orders
+            //               on c.CustomerID equals o.CustomerID
+            //               orderby c.ContactName, o.OrderDate descending
+            //               select new
+            //               {
+            //                   c.ContactName,
+            //                   o.OrderID,
+            //                   o.EmployeeID,
+            //                   o.OrderDate,
+            //                   o.ShippedDate
+            //               };
 
         }
 
-        private void customerBindingNavigator_RefreshItems(object sender, EventArgs e)
+        private void customerBindingSource_CurrentChanged(object sender, EventArgs e)
         {
             Debug.WriteLine(customerIDComboBox.Text);
-            var linq = from o in orders
-                       where o.CustomerID == customerIDComboBox.Text
-                       select new
-                       {
-                           o.OrderID,
-                           o.CustomerID,
-                           o.EmployeeID,
-                           o.OrderDate,
-                           o.RequiredDate,
-                           o.ShippedDate,
-                           o.ShipVia,
-                           o.Freight,
-                           o.ShipName,
-                           o.ShipAddress,
-                           o.ShipCity,
-                           o.ShipRegion,
-                           o.ShipPostalCode,
-                           o.ShipCountry
-                       };
+            //var customerOrders = from o in orders
+            //           where o.CustomerID == customerIDComboBox.Text
+            //           orderby o.OrderDate
+            //           select new
+            //           {
+            //               o.OrderID,
+            //               o.CustomerID,
+            //               o.EmployeeID,
+            //               o.OrderDate,
+            //               o.RequiredDate,
+            //               o.ShippedDate,
+            //               o.ShipVia,
+            //               o.Freight,
+            //               o.ShipName,
+            //               o.ShipAddress,
+            //               o.ShipCity,
+            //               o.ShipRegion,
+            //               o.ShipPostalCode,
+            //               o.ShipCountry
+            //           };
+
+            var ordersOfCurrentCust = new List<Order>();
+            foreach (var o in orders)
+            {
+                if (o.CustomerID == customerIDComboBox.Text)
+                    ordersOfCurrentCust.Add(o);
+            }
+            ordersBindingSource.DataSource = ordersOfCurrentCust;
         }
     }
 }
